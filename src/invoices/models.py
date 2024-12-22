@@ -24,7 +24,7 @@ class Invoice:
     def get_subtotal_products(self) -> float:
         subtotal = 0.0
         for product in self.details:
-            subtotal += product.get("quantity", 0) * product.get("unit_price", 0)
+            subtotal += product.quantity * product.unit_price
         return subtotal
 
     def get_iva_products(self) -> float:
@@ -32,4 +32,4 @@ class Invoice:
         return self.calculation_iva_strategy.calculate_iva(subtotal=subtotal)
 
     def get_total_products(self) -> float:
-        return self.get_subtotal_products() + self.get_products_iva()
+        return self.get_subtotal_products() + self.get_iva_products()

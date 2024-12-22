@@ -1,7 +1,7 @@
 from pydantic import BaseModel, ConfigDict
 
 
-class DetailSchema(BaseModel):
+class InvoiceDetailSchema(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
     product: str
@@ -13,4 +13,13 @@ class InvoiceSchema(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
     type: str
-    details: list[DetailSchema]
+    details: list[InvoiceDetailSchema]
+
+
+class InvoiceResponseSchema(BaseModel):
+    type: str
+    subtotal: float
+    applied_tax: dict
+    total: float
+    details: list[InvoiceDetailSchema]
+
