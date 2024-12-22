@@ -22,4 +22,3 @@ class InvoiceResponseSchema(BaseModel):
     applied_tax: dict
     total: float
     details: list[InvoiceDetailSchema]
-
