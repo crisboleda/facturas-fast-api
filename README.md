@@ -19,6 +19,12 @@ Sistema para la creación de facturas y calculo de IVA según los productos de l
 http://127.0.0.1:8083/docs
 
 
+### Ejecutar tests
+`cd src/`
+
+`python -m unittest`
+
+
 ## Endpoints
 
 ```
